@@ -39,9 +39,9 @@ int testCentsToInches()
 {
     centimeterToInchesConverter con;
     
-    TINYTEST_EQUAL_EPSILON(2.54, con.convert(1.0));
-    TINYTEST_EQUAL_EPSILON(0, con.convert(0.0));
-    TINYTEST_EQUAL_EPSILON(5.08, con.convert(2.0));
+    TINYTEST_EQUAL_EPSILON(0.393701, con.convert(1.0));
+    TINYTEST_EQUAL_EPSILON(0.0, con.convert(0.0));
+    TINYTEST_EQUAL_EPSILON(0.787402, con.convert(2.0));
     
     return 1;
 }

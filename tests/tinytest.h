@@ -55,7 +55,7 @@ typedef struct TinyTestRegistryStruct
 
 #ifndef TINYTEST_NOTESTING
 
-#define EPSILON 0.0000001
+#define EPSILON 0.0000000000
 
 #define TINYTEST_EQUAL_EPSILON_MSG(expected, actual, msg)               \
   if ( fabs((expected) - (actual)) > EPSILON)                           \

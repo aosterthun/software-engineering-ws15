@@ -10,7 +10,7 @@ centimeterToInchesConverter::~centimeterToInchesConverter()
 }
 
 double centimeterToInchesConverter::convert(double inputCentimeters){
-  return inputCentimeters*2.54;
+  return inputCentimeters/2.54;
 }
 
 std::string centimeterToInchesConverter::toString() const{
