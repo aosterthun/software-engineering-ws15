@@ -1,17 +1,6 @@
-#ifndef BUW_ABSTRACTCONVERTERFACTORY
-#define BUW_ABSTRACTCONVERTERFACTORY
+#include "converterfactory.hpp"
 
-#include <map>
-#include <memory>
-#include "converter.hpp"
-
-
-class ConverterFactory
+ConverterFactory::create(std::string className)
 {
-	public:
-		std::shared_ptr<converter> create(std::string className) const;
-	private:
-		std::map<std::string, std::shared_ptr<converter>> factoryMap;
-};
 
-#endif
+}
