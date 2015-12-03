@@ -30,7 +30,7 @@ class ConverterFactory
 		{
 			ConverterFactory::prototypes.insert(std::make_pair(className, prototype));
 		}
-		static getInstance()
+		static ConverterFactory* getInstance()
 		{
 			if(instance == NULL)
 			{
