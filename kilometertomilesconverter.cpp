@@ -21,6 +21,6 @@ void kilometerToMilesConverter::print() const{
   std::cout << toString();
 }
 
-std::shared_ptr<converter> clone(){
-	return std::make_shared<kilometerToMilesConverter>();
+converter* kilometerToMilesConverter::clone(){
+	return new kilometerToMilesConverter();
 }

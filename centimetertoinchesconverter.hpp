@@ -11,7 +11,7 @@ class centimeterToInchesConverter : public lengthconverter
     double convert(double inCentimeters) override;
     std::string toString() const override;
     void print() const override;
-    std::shared_ptr<converter> clone();
+    converter* clone() override;
 };
 
 #endif // CENTIMETERTOINCHES_H

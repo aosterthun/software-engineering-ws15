@@ -9,14 +9,15 @@
 class ConverterFactory
 {
 	public:
-		static std::shared_ptr<converter> create(std::string className) const;
+		static converter* create(std::string className);
 	private:
-		static std::map<std::string, std::shared_ptr<converter>> factoryMap = {
-																				{"dollarToEuroConverter", new dollarToEuroConverter()},
-																				{"euroToDollarConverter", new euroToDollarConverter},
-																				{"euroToDanishKroneConverter", new euroToDanishKroneConverter}, 
-																				{"centimeterToInchesConverter", new centimeterToInchesConverter},
-																				{"kilometerToMilesConverter", new kilometerToMilesConverter}};
+		static std::map<std::string, converter*> factoryMap = 	{
+																	{"dollarToEuroConverter", new dollarToEuroConverter()},
+																	{"euroToDollarConverter", new euroToDollarConverter()},
+																	{"euroToDanishKroneConverter", new euroToDanishKroneConverter()}, 
+																	{"centimeterToInchesConverter", new centimeterToInchesConverter()},
+																	{"kilometerToMilesConverter", new kilometerToMilesConverter()}
+																};
 };
 
 #endif

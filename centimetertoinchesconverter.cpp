@@ -21,7 +21,7 @@ void centimeterToInchesConverter::print() const{
   std::cout << toString();
 }
 
-std::shared_ptr<converter> clone()
+converter* centimeterToInchesConverter::clone()
 {
-	return std::make_shared<converter>();
+	return new centimeterToInchesConverter();
 }
