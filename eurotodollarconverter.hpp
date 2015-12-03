@@ -12,7 +12,7 @@ public:
 	double convert(double inputEuro);
     std::string toString() const;
     void print() const;
-    std::shared_ptr<converter> clone();
+    *converter clone() const override;
 	
 };
 	

@@ -11,7 +11,7 @@ class dollarToEuroConverter : public currencyconverter
     double convert(double inDollars);
     std::string toString() const;
     void print() const;
-    std::shared_pointer<Converter> clone();
+    converter* clone() const override;
 };
 
 #endif // DOLLARTOEUROCONVERTER_H

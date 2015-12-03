@@ -27,8 +27,7 @@ void euroToDollarConverter::print() const{
   std::cout << toString();
 }
 
-std::shared_ptr<converter> euroToDollarConverter::clone()
+converter* euroToDollarConverter::clone() const
 {
-	auto Converter = std::make_shared<euroToDollarConverter>();
-	return Converter;
+	return new euroToDollarConverter();
 }
