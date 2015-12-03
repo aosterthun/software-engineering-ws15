@@ -13,9 +13,10 @@ class ConverterFactory
 	private:
 		static std::map<std::string, std::shared_ptr<converter>> factoryMap = {
 																				{"dollarToEuroConverter", new dollarToEuroConverter()},
-																				{"euroToDollarConverter", new },
-																				{5, 'c'}, 
-																				{7, 'd'}};
+																				{"euroToDollarConverter", new euroToDollarConverter},
+																				{"euroToDanishKroneConverter", new euroToDanishKroneConverter}, 
+																				{"centimeterToInchesConverter", new centimeterToInchesConverter},
+																				{"kilometerToMilesConverter", new kilometerToMilesConverter}};
 };
 
 #endif
