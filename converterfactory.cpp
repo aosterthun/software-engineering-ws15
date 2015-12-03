@@ -10,6 +10,6 @@ class ConverterFactory
 		Converter create(std::string className) const;
 	private:
 		std::map<std::string, Converter> factoryMap;
-}
+};
 
 #endif
