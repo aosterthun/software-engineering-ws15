@@ -20,10 +20,30 @@ class ConverterFactory
 		static ConverterFactory* instance;
 
 	public:
+		bool isRegistered(std::string testString)
+		{
+			if(ConverterFactory::prototypes.find(testString) != ConverterFactory::prototypes.end())
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+
 		converter* create(std::string className)
 		{
-			auto newObject = ConverterFactory::prototypes.find(className);
-			return newObject->second->clone();
+			if(ConverterFactory::prototypes.find(className) != ConverterFactory::prototypes.end())
+			{
+				auto newObject = ConverterFactory::prototypes.find(className);
+				return newObject->second->clone();
+			}
+			else
+			{
+				throw 1;
+			}
 		}
 
 		void registerClass(std::string className, converter* prototype)
