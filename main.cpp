@@ -14,7 +14,6 @@ int main(int argc, char* argv[])
 	std::string conversion = argv[1];
 	std::string value = argv[2];
 	ConverterFactory* converter = ConverterFactory::getInstance();
-
 	converter->registerClass("dollarToEuroConverter", new dollarToEuroConverter);
 	converter->registerClass("euroToDollarConverter", new euroToDollarConverter);
 	converter->registerClass("euroToDanishKroneConverter", new euroToDanishKroneConverter);
@@ -22,9 +21,15 @@ int main(int argc, char* argv[])
 	converter->registerClass("kilometerToMilesConverter", new kilometerToMilesConverter);
 
 
-	auto myConverter = converter->create(conversion);
-	double output = myConverter->convert(std::stod(value));
-	std::cout << myConverter->toString() << " has converted "<< value << " to " << output <<" !"<<std::endl;
+	try
+	{
+		auto myConverter = converter->create(conversion);
+		double output = myConverter->convert(std::stod(value));
+		std::cout << myConverter->toString() << " has converted "<< value << " to " << output <<" !"<<std::endl;
+	}catch(int e)
+	{
+		std::cout << "Your conversion type is not supported";
+	}
 	return 0;
 }
 
