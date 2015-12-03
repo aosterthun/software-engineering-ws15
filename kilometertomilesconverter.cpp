@@ -20,3 +20,7 @@ std::string kilometerToMilesConverter::toString() const{
 void kilometerToMilesConverter::print() const{
   std::cout << toString();
 }
+
+std::shared_ptr<converter> clone(){
+	return std::make_shared<kilometerToMilesConverter>;
+}

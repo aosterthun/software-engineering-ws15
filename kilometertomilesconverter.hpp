@@ -11,7 +11,7 @@ class kilometerToMilesConverter : public lengthconverter
     double convert(double inKilometers) override;
     std::string toString() const override;
     void print() const override;
-    std::shared_pointer<converter> clone();
+    std::shared_ptr<converter> clone();
 };
 
 #endif // KILOMETERMILES_H

@@ -20,3 +20,8 @@ std::string centimeterToInchesConverter::toString() const{
 void centimeterToInchesConverter::print() const{
   std::cout << toString();
 }
+
+std::shared_ptr<converter> clone()
+{
+	return std::make_shared<converter>;
+}
