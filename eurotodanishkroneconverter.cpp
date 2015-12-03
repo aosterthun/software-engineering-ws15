@@ -26,3 +26,9 @@ std::string euroToDanishKroneConverter::toString() const{
 void euroToDanishKroneConverter::print() const{
   std::cout << toString();
 }
+
+std::shared_ptr<converter> euroToDanishKroneConverter::clone()
+{
+	auto Converter = std::make_shared<euroToDanishKroneConverter>();
+	return Converter;
+}
