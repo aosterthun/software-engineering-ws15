@@ -14,6 +14,11 @@
 
 class ConverterFactory
 {
+	private:
+		static std::map<std::string, converter*> prototypes;
+		ConverterFactory(){}
+		static ConverterFactory* instance;
+
 	public:
 		converter* create(std::string className)
 		{
@@ -25,7 +30,13 @@ class ConverterFactory
 		{
 			ConverterFactory::prototypes.insert(std::make_pair(className, prototype));
 		}
-	private:
-		static std::map<std::string, converter*> prototypes;
+		static getInstance()
+		{
+			if(instance == NULL)
+			{
+				instance = new ConverterFactory;
+			}
+			return instance;
+		}
 };
 #endif
