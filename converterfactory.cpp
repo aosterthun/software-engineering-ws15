@@ -2,5 +2,5 @@
 
 ConverterFactory::create(std::string className)
 {
-
+	return factoryMap<className>->clone();
 }
