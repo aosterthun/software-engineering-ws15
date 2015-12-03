@@ -27,7 +27,7 @@ void euroToDanishKroneConverter::print() const{
   std::cout << toString();
 }
 
-converter* euroToDanishKroneConverter::clone() const
+converter* euroToDanishKroneConverter::clone()
 {
 	return new euroToDanishKroneConverter();
 }
