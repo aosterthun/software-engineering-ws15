@@ -1,5 +1,5 @@
 # minimal makefile for SE class
-all: main concreteConverter/currencyConverter concreteConverter/lengthConverter
+all: main test
 
 # main depends on all cpp files
 main: $(patsubst %.cpp,%.o,$(wildcard *.cpp))

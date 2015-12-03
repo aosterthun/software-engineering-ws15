@@ -3,7 +3,7 @@
 
 #include "converter.hpp"
 
-class currencyconverter : converter
+class currencyconverter : public converter
 {
 public:
 	currencyconverter();

@@ -1,19 +1,21 @@
 #include <memory>
-#include <dollartoeuroconverter.hpp>
-#include <eurotodollarconverter.hpp>
-#include <eurotodanishkroneconverter.hpp>
-#include <centimetertoinchesconverter.hpp>
-#include <kilometertomilesconverter.hpp>
+#include "converterfactory.hpp"
+#include "dollartoeuroconverter.hpp"
+#include "eurotodollarconverter.hpp"
+#include "eurotodanishkroneconverter.hpp"
+#include "centimetertoinchesconverter.hpp"
+#include "kilometertomilesconverter.hpp"
 
 int main(int argc, char* argv[])
 {
 	std::string conversion = argv[1];
 	std::string value = argv[2];
+	ConverterFactory::registerClass("dollarToEuroConverter", new dollarToEuroConverter);
 
 	 //std::cout << conversion;
 	 if (conversion == "dollarToEuroConverter")
 	 {
-		auto myConverter = std::make_shared<dollarToEuroConverter>();
+		auto myConverter = ConverterFactory::create("dollarToEuroConverter");
 		double output = myConverter->convert(std::stod(value));
 		std::cout << myConverter->toString() << " has converted "<< value << " to " << output <<" !"<<std::endl;
 	 } 
