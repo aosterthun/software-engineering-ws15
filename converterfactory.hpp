@@ -15,13 +15,13 @@
 class ConverterFactory
 {
 	public:
-		static converter* create(std::string className)
+		converter* create(std::string className)
 		{
 			auto newObject = ConverterFactory::prototypes.find(className);
-			return newObject->second;
+			return newObject->second->clone();
 		}
 
-		static void registerClass(std::string className, converter* prototype)
+		void registerClass(std::string className, converter* prototype)
 		{
 			ConverterFactory::prototypes.insert(std::make_pair(className, prototype));
 		}
