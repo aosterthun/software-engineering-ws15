@@ -7,6 +7,7 @@
 #include "kilometertomilesconverter.hpp"
 
 std::map<std::string, converter*> ConverterFactory::prototypes;
+ConverterFactory* ConverterFactory::instance;
 
 int main(int argc, char* argv[])
 {	
