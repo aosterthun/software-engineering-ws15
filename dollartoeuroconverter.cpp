@@ -25,7 +25,7 @@ void dollarToEuroConverter::print() const{
   std::cout << toString();
 }
 
-converter* dollarToEuroConverterclone() const
+converter* dollarToEuroConverter::clone()
 {
 	return new dollarToEuroConverter();
 }
