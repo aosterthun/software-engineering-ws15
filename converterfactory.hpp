@@ -14,18 +14,29 @@
 
 class ConverterFactory
 {
+	private:
+		static std::map<std::string, converter*> prototypes;
+		ConverterFactory(){}
+		static ConverterFactory* instance;
+
 	public:
-		static converter* create(std::string className)
+		converter* create(std::string className)
 		{
 			auto newObject = ConverterFactory::prototypes.find(className);
-			return newObject->second;
+			return newObject->second->clone();
 		}
 
-		static void registerClass(std::string className, converter* prototype)
+		void registerClass(std::string className, converter* prototype)
 		{
 			ConverterFactory::prototypes.insert(std::make_pair(className, prototype));
 		}
-	private:
-		static std::map<std::string, converter*> prototypes;
+		static getInstance()
+		{
+			if(instance == NULL)
+			{
+				instance = new ConverterFactory;
+			}
+			return instance;
+		}
 };
 #endif

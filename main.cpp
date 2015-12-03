@@ -12,14 +12,16 @@ int main(int argc, char* argv[])
 {	
 	std::string conversion = argv[1];
 	std::string value = argv[2];
-	ConverterFactory::registerClass("dollarToEuroConverter", new dollarToEuroConverter);
-	ConverterFactory::registerClass("euroToDollarConverter", new euroToDollarConverter);
-	ConverterFactory::registerClass("euroToDanishKroneConverter", new euroToDanishKroneConverter);
-	ConverterFactory::registerClass("centimeterToInchesConverter", new centimeterToInchesConverter);
-	ConverterFactory::registerClass("kilometerToMilesConverter", new kilometerToMilesConverter);
+	ConverterFactory  converter;
+
+	converter.registerClass("dollarToEuroConverter", new dollarToEuroConverter);
+	converter.registerClass("euroToDollarConverter", new euroToDollarConverter);
+	converter.registerClass("euroToDanishKroneConverter", new euroToDanishKroneConverter);
+	converter.registerClass("centimeterToInchesConverter", new centimeterToInchesConverter);
+	converter.registerClass("kilometerToMilesConverter", new kilometerToMilesConverter);
 
 
-	auto myConverter = ConverterFactory::create(conversion);
+	auto myConverter = converter.create(conversion);
 	double output = myConverter->convert(std::stod(value));
 	std::cout << myConverter->toString() << " has converted "<< value << " to " << output <<" !"<<std::endl;
 	return 0;
