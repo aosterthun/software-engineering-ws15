@@ -1,5 +1,5 @@
 #include "eurotodollarconverter.hpp"
-
+#include "command.hpp"
 #include <string>
 
 euroToDollarConverter::euroToDollarConverter()
