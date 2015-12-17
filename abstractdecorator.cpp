@@ -44,3 +44,4 @@ converter* ConverterDecorator::clone()
 {
 	return _base->clone();
 }
+
