@@ -1,12 +1,13 @@
 #ifndef BUW_EUROTODOLLARCONVERTER
 #define BUW_EUROTODOLLARCONVERTER
 
-#include "currencyconverter.hpp"
+#include "abstractdecorator.hpp"
 
-class euroToDollarConverter : public currencyconverter
+class euroToDollarConverter : public ConverterDecorator
 {
 public:
 	euroToDollarConverter();
+	euroToDollarConverter(converter* conv);
 	~euroToDollarConverter();
 
 	double convert(double inputEuro);

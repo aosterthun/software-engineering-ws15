@@ -6,7 +6,10 @@ euroToDanishKroneConverter::euroToDanishKroneConverter()
 {
 
 }
+euroToDanishKroneConverter::euroToDanishKroneConverter(converter* conv) : ConverterDecorator{conv}
+{
 
+}
 euroToDanishKroneConverter::~euroToDanishKroneConverter()
 {
 
@@ -16,7 +19,7 @@ euroToDanishKroneConverter::~euroToDanishKroneConverter()
  *Out: Euro value of input dollars as of 9.10.15
  */
 double euroToDanishKroneConverter::convert(double inputEuro){
-  return inputEuro*7.46099733;
+  return ConverterDecorator::convert(inputEuro*7.46099733);
 }
 
 std::string euroToDanishKroneConverter::toString() const{

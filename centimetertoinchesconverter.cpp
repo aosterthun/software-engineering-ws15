@@ -3,6 +3,12 @@
 
 centimeterToInchesConverter::centimeterToInchesConverter()
 {
+
+}
+
+centimeterToInchesConverter::centimeterToInchesConverter(converter* conv) : ConverterDecorator{conv}
+{
+
 }
 
 centimeterToInchesConverter::~centimeterToInchesConverter()
@@ -10,7 +16,7 @@ centimeterToInchesConverter::~centimeterToInchesConverter()
 }
 
 double centimeterToInchesConverter::convert(double inputCentimeters){
-  return inputCentimeters/2.54;
+  return ConverterDecorator::convert(inputCentimeters/2.54);
 }
 
 std::string centimeterToInchesConverter::toString() const{

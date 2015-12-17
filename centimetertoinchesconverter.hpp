@@ -1,12 +1,13 @@
 #ifndef CENTIMETERTOINCHES_H
 #define CENTIMETERTOINCHES_H
 
-#include "lengthconverter.hpp"
+#include "abstractdecorator.hpp"
 
-class centimeterToInchesConverter : public lengthconverter
+class centimeterToInchesConverter : public ConverterDecorator
 {
   public:
     centimeterToInchesConverter();
+    centimeterToInchesConverter(converter* conv);
     ~centimeterToInchesConverter();
     double convert(double inCentimeters) override;
     std::string toString() const override;

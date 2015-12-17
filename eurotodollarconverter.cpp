@@ -7,6 +7,11 @@ euroToDollarConverter::euroToDollarConverter()
 
 }
 
+euroToDollarConverter::euroToDollarConverter(converter* conv) : ConverterDecorator{conv}
+{
+
+}
+
 euroToDollarConverter::~euroToDollarConverter()
 {
 
@@ -16,7 +21,7 @@ euroToDollarConverter::~euroToDollarConverter()
  *Out: Euro value of input dollars as of 9.10.15
  */
 double euroToDollarConverter::convert(double inputEuro){
-  return inputEuro/0.88;
+  return ConverterDecorator::convert(inputEuro/0.88);
 }
 
 std::string euroToDollarConverter::toString() const{

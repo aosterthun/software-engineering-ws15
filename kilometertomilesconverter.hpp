@@ -1,12 +1,13 @@
 #ifndef KILOMETERMILES_H
 #define KILOMETERMILES_H
 
-#include "lengthconverter.hpp"
+#include "abstractdecorator.hpp"
 
-class kilometerToMilesConverter : public lengthconverter
+class kilometerToMilesConverter : public ConverterDecorator
 {
   public:
     kilometerToMilesConverter();
+    kilometerToMilesConverter(converter* conv);
     ~kilometerToMilesConverter();
     double convert(double inKilometers) override;
     std::string toString() const override;

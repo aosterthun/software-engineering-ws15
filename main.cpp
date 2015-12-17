@@ -20,15 +20,20 @@ int main(int argc, char* argv[])
 	converter->registerClass("centimeterToInchesConverter", new centimeterToInchesConverter);
 	converter->registerClass("kilometerToMilesConverter", new kilometerToMilesConverter);
 
-
 	try
 	{
 		auto myConverter = converter->create(conversion);
 		double output = myConverter->convert(std::stod(value));
 		std::cout << myConverter->toString() << " has converted "<< value << " to " << output <<" !"<<std::endl;
-	}catch(int e)
+	}
+	catch(int e)
 	{
-		std::cout << "Your conversion type is not supported";
+		if(e == 1){
+			std::cout << "Your conversion type is not supported";
+		}
+		else if(e == 2){
+			std::cout << "No object in decorator";
+		}
 	}
 	return 0;
 }

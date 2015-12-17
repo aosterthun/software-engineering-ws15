@@ -1,12 +1,13 @@
 #ifndef BUW_EUROTODANISHKRONE
 #define BUW_EUROTODANISHKRONE
 
-#include "currencyconverter.hpp"
+#include "abstractdecorator.hpp"
 
-class euroToDanishKroneConverter : public currencyconverter
+class euroToDanishKroneConverter : public ConverterDecorator
 {
 public:
 	euroToDanishKroneConverter();
+	euroToDanishKroneConverter(converter* conv);
 	~euroToDanishKroneConverter();
 
 	double convert(double inEuro);
