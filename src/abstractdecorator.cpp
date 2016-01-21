@@ -16,6 +16,7 @@ ConverterDecorator::~ConverterDecorator()
 }
 double ConverterDecorator::convert(double inValue) 
 {
+	std::cout << "hui";
 	if(_base)
 	{
 		return _base->convert(inValue);

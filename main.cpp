@@ -34,6 +34,7 @@ int main(int argc, char* argv[]) {
         commandList.push_back(
             Command{convertMethod, convert, std::stod(input_str) }
         );
+        std::cout << "rolf";
     }
 
     for (auto&& command : commandList) {

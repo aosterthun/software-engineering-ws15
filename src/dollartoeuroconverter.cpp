@@ -15,6 +15,7 @@ dollarToEuroConverter::~dollarToEuroConverter()
  *Out: Euro value of input dollars as of 9.10.15
  */
 double dollarToEuroConverter::convert(double inputDollars){
+	std::cout << "hui2";
   return ConverterDecorator::convert(inputDollars*0.88);
 }
 

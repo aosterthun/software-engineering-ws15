@@ -15,6 +15,7 @@ class Command {
 
     void execute() const 
     {
+        std::cout << "omfg";
     	std::cout << "Converted " << m_input << " to " << (*m_converter.*m_method)(m_input) << std::endl;
     }
 
