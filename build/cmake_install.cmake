@@ -1,4 +1,4 @@
-# Install script for directory: /home/hans/Uni/SE/software-engineering-ws15
+# Install script for directory: /Users/arneosterthun/Documents/Studium/SoftwareEngeneering/software-engineering-ws15
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,18 +27,13 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
-
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/home/hans/Uni/SE/software-engineering-ws15/build/${CMAKE_INSTALL_MANIFEST}" "")
-foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/home/hans/Uni/SE/software-engineering-ws15/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
-endforeach()
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+file(WRITE "/Users/arneosterthun/Documents/Studium/SoftwareEngeneering/software-engineering-ws15/build/${CMAKE_INSTALL_MANIFEST}"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
