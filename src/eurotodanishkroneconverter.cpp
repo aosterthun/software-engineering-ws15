@@ -19,6 +19,12 @@ euroToDanishKroneConverter::~euroToDanishKroneConverter()
  *Out: Euro value of input dollars as of 9.10.15
  */
 double euroToDanishKroneConverter::convert(double inputEuro){
+	std::cout << "asdf";
+	if(typeid(inputEuro).name() != "double"){
+		std::cout << "asdf";
+		throw std::invalid_argument("Please insert a double value!");
+	}
+
   return ConverterDecorator::convert(inputEuro*7.46099733);
 }
 

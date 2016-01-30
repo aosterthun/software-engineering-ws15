@@ -15,8 +15,13 @@ class Command {
 
     void execute() const 
     {
-        std::cout << "omfg";
-    	std::cout << "Converted " << m_input << " to " << (*m_converter.*m_method)(m_input) << std::endl;
+        try{
+            std::cout << "Converted " << m_input << " to " << (*m_converter.*m_method)(m_input) << std::endl;    
+        }catch(std::exception e)
+        {
+            std::cout << "lel";
+        }
+    	
     }
 
  private:

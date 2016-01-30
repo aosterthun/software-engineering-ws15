@@ -1,10 +1,10 @@
 #include "tinytest.h"
-#include "../eurotodollarconverter.hpp"
-#include "../dollartoeuroconverter.hpp"
-#include "../eurotodanishkroneconverter.hpp"
-#include "../centimetertoinchesconverter.hpp"
-#include "../kilometertomilesconverter.hpp"
-#include "../converterfactory.hpp"
+#include "eurotodollarconverter.hpp"
+#include "dollartoeuroconverter.hpp"
+#include "eurotodanishkroneconverter.hpp"
+#include "centimetertoinchesconverter.hpp"
+#include "kilometertomilesconverter.hpp"
+#include "converterfactory.hpp"
 
 std::map<std::string, converter*> ConverterFactory::prototypes;
 ConverterFactory* ConverterFactory::instance;

@@ -42,7 +42,7 @@ class ConverterFactory
 			}
 			else
 			{
-				throw 1;
+				throw std::invalid_argument("This converter(" + className + ") is currently not supported!");
 			}
 		}
 
